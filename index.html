@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Website of SKANELAS</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Custom CSS for black background -->
+  <style>
+    body {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    .section:not(.dark-background) {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    .light-background {
+      background-color: #111111 !important;
+    }
+    .service-item, .portfolio-content, .member, .stats-item {
+      background-color: #111111 !important;
+    }
+    p, h1, h2, h3, h4, h5, h6 {
+      color: #ffffff !important;
+    }
+    /* Add new style for member section text */
+    .member .member-info h4,
+    .member .member-info span,
+    .member .member-info .social a {
+      color: #000000 !important;
+    }
+    /* Add new style for map section text */
+    #map .info-item h3,
+    #map .info-item p {
+      color: #000000 !important;
+    }
+    /* Add new style for services section text */
+    .service-item h3,
+    .service-item p {
+      color: #000000 !important;
+    }
+
+    .vision-mission-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .vision-box, .mission-box {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: #fff;
+    }
+
+    .vision-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #fff;
+    }
+
+    .mission-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mission-list li {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .mission-list li i {
+      color: #fff;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .vision-mission-container {
+        padding: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .vision-text, .mission-list li {
+        font-size: 0.95rem;
+      }
+    }
+
+    .maps[_ngcontent-ng-c1812907692]   iframe[_ngcontent-ng-c1812907692] {
+  padding:24px;
+  width:70%;
+  height:291.542px;
+  flex-shrink:0;
+  margin-bottom:50px;
+  border-radius:25px
+}
+
+    /* Popup Modal Styles */
+    .popup-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+    }
+
+    .popup-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px 10px;
+    }
+
+    .close-popup:hover {
+      color: #ccc;
+    }
+
+    /* Add new styles for news images */
+    .portfolio-content {
+      border: 3px solid #28a745;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
+    }
+    
+    .portfolio-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(40, 167, 69, 0.5);
+    }
+
+    .portfolio-content img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-content:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-info {
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .portfolio-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .portfolio-info p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: #cccccc;
+    }
+
+    .portfolio-info .preview-link,
+    .portfolio-info .details-link {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      font-size: 1.2rem;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-info .preview-link:hover,
+    .portfolio-info .details-link:hover {
+      color: #28a745;
+    }
+  </style>
+
+  <!-- Favicons -->
+  <link href="assets/img/clients/Logo-SMKN11Batam.png" rel="icon">
+  <link href="assets/img/clients/Logo-SMKN11Batam.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "https://raw.githubusercontent.com/allmezzi/FutsalFlex2025/main/TopScorePutra.txt",
+            dataType: 'text',
+            success: function(data) {
+                var rows = data.split("\n");
+                var dataArray = [];
+
+                for (var i = 0; i < rows.length; i++) {
+                    var columns = rows[i].split(",");
+                    dataArray.push([$.trim(columns[0]), $.trim(columns[1]), parseInt($.trim(columns[2]))]);
+                }
+
+                $('#myTable').DataTable({
+                    data: dataArray,
+                    columns: [
+                        { title: "Nama Pemain" },
+                        { title: "Nama Tim" },
+                        { title: "Gol", type: "num" } // Set the type as numeric
+                        // Add more columns as needed
+                    ],
+                    order: [[2, "desc"]] // Order by the third column descending
+                });
+            },
+            error: function(xhr, textStatus, error) {
+                alert("Error: " + textStatus + ", " + error);
+            }
+        });
+
+  </script>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/clients/Logo-SMKN11Batam.png" alt="">
+        <h1 class="sitename">SMKN 11 Batam</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#Profile">Profile</a></li>
+          <li><a href="#News">News</a></li>
+          <li><a href="#DataGTK">Data GTK</a></li>
+          <li class="dropdown"><a href="#"><span>Application</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dapodik</a></li>
+              <li><a href="#">CBT</a></li>
+              <li><a href="#">e-BMD</a></li>
+            </ul>
+          </li>
+          <li><a href="#Ekskul">Ekskul</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="index.html#home">Login</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <img src="assets/img/header.png" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Imam al-Ghazali</h3>
+                <h4>Tokoh Pendidikan Islam</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Menuntut ilmu adalah taqwa, menyampaikan ilmu adalah ibadah, mengulang ilmu adalah dzikir, mencari ilmu adalah jihad.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Ki Hajar Dewantara</h3>
+                <h4>Tokoh Pendidikan Indonesia</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ing ngarso sung tulodo, ing madyo mangun karso, tut wuri handayani (di depan memberikan teladan, di tengah-tengah membangun kemauan atau cita-cita, dan dari belakang memberikan dorongan moral atau semangat).</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>R.A Kartini</h3>
+                <h4>Tokoh Pendidikan Indonesia</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Habis gelap terbitlah terang - jangan biarkan kegelapan kembali datang, jangan biarkan kaum wanita diperlakukan semena-mena.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Nelson Mandela</h3>
+                <h4>Tokoh Pendidikan Dunia</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan anda dapat mengubah dunia.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>Albert Einstein</h3>
+                <h4>Tokoh Pendidikan Dunia</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ilmu tanpa agama adalah lumpuh, agama tanpa ilmu adalah buta.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+			
+			<div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-6.png" class="testimonial-img" alt="">
+                <h3>Rosi Yulianti</h3>
+                <h4>Kepala SMKN 11 Batam</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Pendidikan akarnya pahit, buahnya manis. SMKN 11 Batam Bertaqwa, Berinovasi, Berprestasi!!!.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </section><!-- /Services Section -->
+
+<!-- Clients Section -->
+<section id="clients" class="clients section light-background">
+<div class="container" data-aos="fade-up">
+  <div class="row justify-content-center text-center">
+    
+    <div class="col-xl-2 col-md-3 col-6 client-logo">
+      <img src="assets/img/logo/logotei.png" class="img-fluid" alt="" style="filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7)); animation: glow 2s infinite;">
+    </div><!-- End Client Item -->
+
+    <div class="col-xl-2 col-md-3 col-6 client-logo">
+      <img src="assets/img/logo/logotitl.png" class="img-fluid" alt="" style="filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7)); animation: glow 2s infinite;" >
+    </div><!-- End Client Item -->
+
+    <div class="col-xl-2 col-md-3 col-6 client-logo">
+      <img src="assets/img/logo/logosmkn11batam.png" class="img-fluid" alt="" style="filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7)); animation: glow 2s infinite;">
+    </div><!-- End Client Item -->
+
+    <div class="col-xl-2 col-md-3 col-6 client-logo">
+      <img src="assets/img/logo/logootomasi.png" class="img-fluid" alt="" style="filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7)); animation: glow 2s infinite;" >
+    </div><!-- End Client Item -->
+
+    <div class="col-xl-2 col-md-3 col-6 client-logo">
+      <img src="assets/img/logo/logopemesinan.png" class="img-fluid" alt="" style="filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7)); animation: glow 2s infinite;" >
+    </div><!-- End Client Item -->
+
+  </div>
+</div>
+
+<div class="container d-flex flex-column align-items-center">
+        <h2 data-aos="fade-up" data-aos-delay="500" style="font-size: 2.5rem;">•○ BERTAQWA - BERINOVASI - BERPRESTASI ○•</h2>
+        <div class="d-flex" data-aos="fade-up" data-aos-delay="300">
+        </div>
+      </div>
+
+</section><!-- /Clients Section -->
+
+<!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container">
+  <div class="row gy-4 justify-content-center">
+    <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="250">
+      <div class="content text-center">
+        <div class="position-relative mt-4 d-inline-block" style="max-width: 1000px;">
+          <img src="assets/img/aboutus.jpg" class="img-fluid rounded-4 w-100" alt="">
+          <a href="https://www.youtube.com/watch?v=eVgmbOS8so0&pp=ygUMc21rbjExIGJhdGFt" class="glightbox pulsating-play-btn position-absolute top-50 start-50 translate-middle"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Jumlah Guru</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Jumlah Tenaga Kependidikan</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Jumlah Konsentrasi Keahlian</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="239" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Jumlah Peserta Didik</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="Profile" class="services section">  
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <p>Konsentrasi Keahlian<br></p>
+      </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5 justify-content-center">
+            
+            <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="service-item">
+                <div class="img">
+                  <img src="assets/img/logo/logotei.png" class="img-fluid" alt="">
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-activity"></i>
+                  </div>
+                  <a href="#" class="stretched-link"> <!-- link jurusan tei-->
+                    <h3>Teknik Elektronika Industri</h3>
+                  </a>
+                  <p>Teknik Elektronika Industri adalah program kejuruan yang mendidik siswa agar memiliki kemampuan dalam merancang, merakit, mengoperasikan, dan memperbaiki peralatan elektronika industri, termasuk sistem kontrol dan maintenance berbasis electrical control dan microprocessor.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="service-item">
+                <div class="img">
+                  <img src="assets/img/logo/logotitl.png" class="img-fluid" alt="">
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-broadcast"></i>
+                  </div>
+                  <a href="#" class="stretched-link"> <!-- link jurusan titl-->
+                    <h3>Teknik Instalasi Tenaga Listrik</h3>
+                  </a>
+                  <p>Teknik Instalasi Tenaga Listrik adalah program kejuruan yang fokus pada pendidikan dan pelatihan di bidang instalasi listrik, termasuk perancangan, pemasangan, pemeliharaan, dan perbaikan sistem kelistrikan.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5 justify-content-center">
+            
+            <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="service-item">
+                <div class="img">
+                  <img src="assets/img/logo/logootomasi.png" class="img-fluid" alt="">
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-activity"></i>
+                  </div>
+                  <a href="#" class="stretched-link"> <!-- link jurusan tei-->
+                    <h3>Teknik Otomasi</h3>
+                  </a>
+                  <p>Teknik Otomasi  adalah program kejuruan yang mempelajari tentang penggunaan teknologi dan sistem otomatisasi untuk mengontrol proses produksi di berbagai industri, seperti sistem PLC, HMI, dan SCADA. Jurusan ini mengajarkan siswa tentang perancangan, perakitan, pengoperasian, dan pengendalian sistem otomasi agar proses berjalan efisien.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="service-item">
+                <div class="img">
+                  <img src="assets/img/logo/logopemesinan.png" class="img-fluid" alt="">
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-broadcast"></i>
+                  </div>
+                  <a href="#" class="stretched-link"> <!-- link jurusan titl-->
+                    <h3>Teknik Pemesinan</h3>
+                  </a>
+                  <p>Teknik permesinan adalah program kejuruan yang mempersiapkan siswa untuk bekerja di bidang manufaktur, khususnya dalam proses pengerjaan dan pemesinan komponen mesin. Lulusan teknik permesinan dapat menjadi operator mesin, teknisi, atau bahkan perancang mesin di berbagai industri.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 text-center mt-4 konke" data-aos="fade-up" data-aos-delay="700">
+              <a href="Konsentrasi Keahlian/index.html" class="btn btn-success" target="_blank">More Konsentrasi Keahlian <i class="bi bi-arrow-right"></i></a>
+            </div>  
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<div class="container section-title" data-aos="fade-up">
+  <p>Organizational Structure, Visi Misi, Sejarah and Partnership<br></p>
+</div><!-- End Section Title -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+              <i class="bi bi-brightness-high"></i>
+              <h4 class="d-none d-lg-block">Struktur Organisasi SMKN 11 Batam</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+              <i class="bi bi-binoculars"></i>
+              <h4 class="d-none d-lg-block">Visi dan Misi SMKN 11 Batam</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+              <i class="bi bi-box-seam"></i>
+              <h4 class="d-none d-lg-block">Sejarah SMKN 11 Batam</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+              <i class="bi bi-command"></i>
+              <h4 class="d-none d-lg-block">Partnership</h4>
+            </a>
+          </li>
+        </ul><!-- End Tab Nav -->
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade" id="features-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+              </div>
+              <div class="col-lg-12 text-center">
+                <h3 class="text-center">Struktur Organisasi SMKN 11 Batam</h3>
+              </div>
+              <div class="col-lg-12 text-center">
+                <img src="assets/img/StrukturOrganisasi.png" alt="" class="img-fluid" style="transition: transform 0.3s ease; cursor: pointer; position: relative; z-index: 1000;" onmouseover="this.style.transform='scale(1)'; this.style.position='fixed'; this.style.top='0'; this.style.left='0'; this.style.width='100vw'; this.style.height='100vh'; this.style.objectFit='contain'; this.style.backgroundColor='rgba(0,0,0,0.9)'" onmouseout="this.style.transform='scale(1)'; this.style.position='relative'; this.style.width='auto'; this.style.height='auto'; this.style.backgroundColor='transparent'">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade active show" id="features-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Visi SMKN 11 Batam</h3>                
+                <p>
+                  Mewujudkan peserta didik yang bertaqwa, kompeten, inovatif, berjiwa wirausaha dan memiliki daya saing secara global.
+                </p>
+                <h3>Misi SMKN 11 Batam</h3>                         
+                <ul>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menumbuhkan dan mengembangkan penghayatan dan pengamalan terhadap agama yang dianut.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menyelenggarakan pembelajaran budi pekerti.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menerapkan kurikulum berstandar industri.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menyelenggarakan uji sertifikasi kompetensi sesuai standar industri.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menjalin kerjasama dengan Industri Dunia Kerja (Iduka) serta Lembaga Sertifikasi Profesi (LSP).</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menerapkan pembelajaran berbasis proyek.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menerapkan pembelajaran Interaktif dengan pemanfaatan teknologi.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Mengembangkan sikap dan jiwa kewirausahaan.</spab>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Menerapkan pembelajaran yang mengajarkan kecakapan hidup melalui program kewirausahaan berbasis IPTEK dan kearifan lokal.</spab>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/gedung.gif" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Sejarah SMKN 11 Batam</h3>
+                <p>
+                  SMK Negeri 11 Batam merupakan sekolah kejuruan negeri termuda di Kota Batam yang bernaung dibawah Dinas Pendidikan Provinsi Kepulauan Riau. SMK Negeri 11 Batam berdiri berdasarkan Keputusan Gubernur Kepulauan Riau Nomor 341 Tahun 2024 tanggal 23 Februari 2024 yang beralamat di Jalan Dapur 12 Kavling Bukit Melati, Sei Pelunggut, Sagulung, Batam, Provinsi Kepulauan Riau. Kecamatan Sagulung saat ini sudah terdapat 3 SMK negeri, namun tingginya minat lulusan tingkat menengah pertama di daerah ini untuk melanjutkan ke sekolah kejuruan, membuat pemerintah Provinsi Kepulauan Riau merasa perlu adanya penambahan sekolah kejuruan di daerah ini.
+				  Untuk menjawab kebutuhan akan daya tampung sekolah kejuruan berdasarkan minat lulusan tahun ini meningkat tajam khususnya di daerah Sagulung, maka pada tahun ajaran 2024/2025 tepatnya tanggal 15 Juli 2024 SMKN 11 Batam resmi menerima peserta didik dengan jumlah 6 rombongan belajar dan jumlah peserta didik 150 orang.
+                </p>
+                <p>SMK Negeri 11 Batam memiliki 2 konsentrasi keahlian yaitu Teknik Instalasi Tenaga Listrik dan Teknik Elektronika Industri. Untuk fasilitas sarana dan prasarana masih terdiri dari 4 ruang kelas dengan luas lahan 40 m x 150 m.</p>                                
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/gedung.gif" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Partnership</h3>                
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/gedung.gif" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Services 2 Section -->
+    <section id="services-2" class="services-2 section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">        
+        <p>ACHIEVEMENTS</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="fa-solid fa-futbol icon flex-shrink-0" style="font-size: 2rem; color: #ff0000; display: flex; align-items: center; justify-content: center;"></i>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Futsal Siswa SMKN 11 Batam</a></h4>
+                <p class="description" style="color: #ffffff !important;">Juara 2</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-trophy icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Tarung Derajat</a></h4>
+                <p class="description" style="color: #ffffff !important;">Prestasi Update 2</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-trophy icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Futsal Guru SMKN 11 Batam</a></h4>
+                <p class="description" style="color: #ffffff !important;">Prestasi Update 3</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-trophy icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Futsal Guru SMKN 11 Batam</a></h4>
+                <p class="description" style="color: #ffffff !important;">Prestasi Update 4</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-trophy icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Futsal Guru SMKN 11 Batam</a></h4>
+                <p class="description" style="color: #ffffff !important;">Prestasi Update 5</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-trophy icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Futsal Guru SMKN 11 Batam</a></h4>
+                <p class="description" style="color: #ffffff !important;">Prestasi Update 6</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-12 text-center mt-4" data-aos="fade-up" data-aos-delay="700">
+            <a href="achievements/index-achievements.html" class="btn btn-success">More Achievements <i class="bi bi-arrow-right"></i></a>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </section><!-- /Services 2 Section -->
+
+    <!-- Testimonials Section -->
+    <!-- /Testimonials Section -->
+
+    <!-- Portfolio Section -->
+    <section id="News" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <p>NEWS</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Guru</li>
+            <li data-filter=".filter-product">Peserta Didik</li>
+            <li data-filter=".filter-branding">Iduka</li>
+            <li data-filter=".filter-books">Others</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/guru-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Peringatan Hari Pendidikan Nasional Tahun 2025</h4>
+                  <p>Makan Bersama Guru SMKN 11 Batam</p>
+                  <a href="assets/img/newsassets/guru-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="News/index-news.html#Berita1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/pesertadidik-1.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/pesertadidik-1.gif" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="berita.html?id=2" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/iduka-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/iduka-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="News/index-news.html#Berita2" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/others-1.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/others-1.gif" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/guru-2.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/guru-2.gif" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/pesertadidik-2.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/pesertadidik-2.gif" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/iduka-2.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/iduka-2.gif" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/others-2.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/others-2.gif" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/guru-3.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/guru-3.gif" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/pesertadidik-3.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/pesertadidik-3.gif" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/iduka-3.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/iduka-3.gif" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/newsassets/others-3.gif" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
+                  <a href="assets/img/newsassets/others-3.gif" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <div class="col-md-12 text-center mt-4" data-aos="fade-up" data-aos-delay="700">
+      <a href="News/index-news.html" class="btn btn-success">More News <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <!-- Team Section -->
+    <section id="DataGTK" class="team section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <p>Guru dan Tenaga Kependidikan</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Rosi Yulianti.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Rosi Yulianti, SE., M.Pd.</h4>
+                <span>Kepala Sekolah</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/rosi-yulianti-54089244/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/rosi.yulianti.1" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/smkn11batamofficial/#/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Fery Supandi.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Fery Supandi, MT.</h4>
+                <span>Teknik Tenaga Kelistrikan</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/fery-supandi-a7006456/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/fery.supandi.3" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/glovia5.putri/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Rika Melati.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Rika Melati, S.Pd.</h4>
+                <span>Matematika</span>
+                <div class="social">
+                  <a href="https://petualangpemikiruniq.blogspot.com" target="_blank"><i class="bi bi-globe"></i></a>
+                  <a href="https://www.facebook.com/rikamelati86" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/rikamelati86" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+		  
+		  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Wahyu Rismanto.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Wahyu Rismanto, S.Pd.</h4>
+                <span>Bimbingan Konseling</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/wahyu-rismanto-b20000122/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/rizman.wahyu" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/wahyu.rismanto/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://youtube.com/@wahyurismanto4706?si=pqfqV7mOtEabiwgp" target="_blank"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Yulando Adhaputra.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Yulando Adhaputra, S.Pd.</h4>
+                <span>Informatika / IT</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/yulando-adhaputra-abb409122/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/yulando.adhaputra" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/ylndadhaptr/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.discord.com/@udandogaming/" target="_blank"><i class="bi bi-discord"></i></a>
+                  <a href="https://www.youtube.com/@anythinkmediayt" target="_blank"><i class="bi bi-youtube"></i></a>
+                  <a href="https://wa.me/6281266773757" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Yandri.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Yandri Syafputra, M.Sn.</h4>
+                <span>Seni Budaya</span>
+                <div class="social">
+                  <a href="https://www.youtube.com/@yandrisyafputra7319" target="_blank"><i class="bi bi-youtube"></i></a>
+                  <a href="https://www.facebook.com/yandri.syafputra123" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/yandrisyafputra__/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@gandhialister19/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+		  
+		  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Gusrita Dewi.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Gusrita Dewi, S.Pd.</h4>
+                <span>Teknik Elektronika</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/gusrita.dewi" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/gusritadewi" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@gusritadewi1" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Debi Asmara.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Debi Asmara, ST.</h4>
+                <span>Teknik Elektronika</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/debi.asmara" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/debi_asmara/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@user1865192380408" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Ngaeni.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Ngaeni, S.Pd.</h4>
+                <span>Pendidikan Agama Islam</span>
+                <div class="social">
+                  <a href="https://youtube.com/@ngaeniyatussalamah9012?si=01XX5xVo-Dz4Jhwd" target="_blank"><i class="bi bi-youtube"></i></a>
+                  <a href="https://www.facebook.com/ngaenisalamah" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/ngaenisalamah/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+		  
+		  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Elvi.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Elvi Marisa, S.Pd.</h4>
+                <span>Bahasa Inggris</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/elvibunda.fahri" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/elvibunda/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@elvi338/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Hestika.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Hestika, S.Pd.</h4>
+                <span>Bahasa Indonesia</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/tita.tertia" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/tita_hestika/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@hestikatertia/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Desi Lestari.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Desi Lestari, S.Pd.</h4>
+                <span>Bahasa Indonesia</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=61561154090354" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/aie.desilestari/#/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@lestari.aie/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+		  
+		  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Dwi.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dwi Putri Ayunani Bahri, S.Pd.</h4>
+                <span>Pancasila dan Kewarganegaraan</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/dwiputri.ayunani" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/dwiputriayunanibahri/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@ayunanidwi/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Welsy.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Welsy Naharis Syafira, S.Pd.</h4>
+                <span>Fisika</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/welsy-naharis-syafira-baa636229/" target="_blank"><i class="bi bi-steam"></i></a>
+                  <a href="https://www.facebook.com/welsynaharis.syafira" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/wxlcyy_/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Idarni.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Idarni, S.Sos.</h4>
+                <span>Tenaga Kependidikan</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=61574871535848" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/idarniii/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@idarniii85/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+		  
+		      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Angga.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Angga Saputra</h4>
+                <span>Tenaga Kependidikan</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/angga.saputra.466277" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/banggeer30/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@banggeer30" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Putri.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Devi Putri Anggraini</h4>
+                <span>Tenaga Kependidikan</span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in//" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100029401219283" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/iputtriiee/?__pwa=1#" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@iputriee/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/Foto Jon.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Jon Perianto Sitepu</h4>
+                <span>Petugas Keamanan</span>
+                <div class="social">    
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-md-12 text-center mt-4" data-aos="fade-up" data-aos-delay="700">
+            <a href="#" class="btn btn-success">More GTK <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">        
+        <p>Contact Us</p>
+      </div><!-- End Section Title -->
+
+      <div id="map" class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-8">
+            <div class="row gy-4">
+
+              <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1877500066116!2d103.95787437528844!3d1.0186700989715294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9930070b0d451%3A0x46b4c460507910d!2sSMK%20NEGERI%2011%20BATAM!5e0!3m2!1sen!2sid!4v1745938954721!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+6285364584866</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>smkn11batam@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about mx-auto text-center">                     
+          </div>
+          <div class="social-links d-flex mt-4 justify-content-center">
+            <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61565357243927&__cft__[0]=AZW-3KgOvYq7c-s46ln7Ty7Dz0LdescRdqN7EUbzDSXDGgsDwiEd7fNrusqUDzV90PdJyNFTI3GZOKJMRkpW5ojjKZS-GrslfS6NLw48UcVjzwXJCJLTt0QlqNxajkGDD5JcGhO3jNGTwxvm-_SyefBf0TcihiyfLLm0iAiPXVKuOasvRKxhwGaqmLAwil-LUI1dvimNPw7SEi_zs2_knmH5&__tn__=-UC%2CP-R" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/smkn11batamofficial/#/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCiTPeDkYAtQZkacoP6qVTEA" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://smkn11batam.sch.id/" target="_blank"><i class="bi bi-globe"></i></a>
+          </div>
+          <div class="footer-contact pt-3 text-center">
+            <p>Copyright 2025 </p>            
+            <p>Website Developed and Designed by Yulando Adhaputra </p>
+            <p>IT SMKN 11 Batam</p>
+          </div>
+
+        <!-- Footer Links 
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+     <!--  <p>© <span>Copyright</span> <strong class="px-1 sitename">Dewi</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      </div> --> 
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Add this right after the opening body tag -->
+  <div class="popup-modal" id="imagePopup">
+    <div class="popup-content">
+      <button class="close-popup" onclick="closePopup()">&times;</button>
+      <img src="assets/img/popup.gif" alt="Welcome to SMKN 11 Batam">
+    </div>
+  </div>
+
+  <!-- Add this right before the closing body tag -->
+  <script>
+    // Show popup when page loads
+    window.onload = function() {
+      document.getElementById('imagePopup').style.display = 'flex';
+    }
+
+    // Close popup function
+    function closePopup() {
+      document.getElementById('imagePopup').style.display = 'none';
+    }
+
+    // Close popup when clicking outside the image
+    document.getElementById('imagePopup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePopup();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
